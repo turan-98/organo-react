@@ -1,0 +1,7 @@
+.AppBanner--static{
+   background-color: #6278f7;
+   text-align: center;
+}
+.AppBanner--static img{
+    max-width: 100%;
+}
