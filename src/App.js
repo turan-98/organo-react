@@ -1,12 +1,12 @@
-import Banner from './components/Banner/Banner';
-import './App.css';
+import Banner from './components/Banner';
+import InputText from './components/InputText';
 
 function App() {
   return (
     <div className="App">
       
         <Banner />
-      
+        <InputText />
     </div>
   );
 }
