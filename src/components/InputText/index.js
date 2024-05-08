@@ -1,10 +1,10 @@
 import './InputText.css';
 
-const InputText = () => {
+const InputText = (props) => {
     return(
         <div className='text-field'>
-            <label>Nome</label>
-            <input  placeholder='Digite seu nome'/>
+            <label>{props.label}</label>
+            <input  placeholder={props.placeholder}/>
         </div>
     )
 }

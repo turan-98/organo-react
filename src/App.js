@@ -1,12 +1,11 @@
 import Banner from './components/Banner';
-import InputText from './components/InputText';
+import Form from './components/Form';
 
 function App() {
   return (
     <div className="App">
-      
         <Banner />
-        <InputText />
+        <Form />
     </div>
   );
 }

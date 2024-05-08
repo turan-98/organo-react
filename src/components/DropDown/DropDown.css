@@ -1,0 +1,18 @@
+.dropdown {
+    margin: 24px 0;
+    label{
+        display: block;
+        margin-bottom: 8px;
+        font-size: 2em;
+    }
+    select{
+        box-shadow: 10px 10px 30px rgba(0,0,0,0.06);
+        /* Definindo como 100% o tamanho faz com que o container defina o tamanho dele, ele sempre vai ocupar 100% do tamanho definido*/
+        width: 100%;
+        border: none;
+        font-size: 2em;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+    
+}
