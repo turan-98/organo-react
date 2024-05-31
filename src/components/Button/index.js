@@ -2,7 +2,10 @@ import "./style.css";
 
 const Button = (props) => {
     return (
-        <button className="btn-active">{props.label}</button>
+        //Tudo o que tiver dentro do botão será passado no props
+        // pode ser ícones, imagem, ícones mais texto
+        //só colocar o contéudo dentro das tags
+        <button className="btn-active">{props.children}</button>
     )
 }
 export default Button;

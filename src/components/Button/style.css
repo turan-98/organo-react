@@ -1,0 +1,14 @@
+.btn-active{
+    background: #6278f7;
+    border-radius: 4px;
+    font-weight: 700;
+    font-style: 18px;
+    padding: 24px;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    &:hover{
+        color:#99ffd4
+    }
+}
