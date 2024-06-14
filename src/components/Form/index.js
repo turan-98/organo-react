@@ -3,7 +3,7 @@ import { useState } from 'react';
 import DropDown from '../DropDown';
 import InputText from '../InputText';
 import './Form.css'
-const Form = () => {
+const Form = (props) => {
     const times = [
         'xxx',
         'xx1',
@@ -16,6 +16,12 @@ const Form = () => {
 
     const onSave = (event) => {
         event.preventDefault();
+        props.onSaveCoworker({
+            nome,
+            cargo,
+            funcao,
+            time
+        })
         console.log("Envio do form", nome, cargo, funcao, time)
     }
 
