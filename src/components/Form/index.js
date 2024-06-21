@@ -1,14 +1,19 @@
+import React from'react';
+import PropTypes from 'prop-types';
 import Button from '../Button';
 import { useState } from 'react';
 import DropDown from '../DropDown';
 import InputText from '../InputText';
 import './Form.css'
+
 const Form = (props) => {
     const times = [
-        'xxx',
-        'xx1',
+        'Programação',
+        'Design',
+        'Marketing',
+        'Negócios'
     ]
-
+    
     const [nome,setNome] = useState('');
     const [cargo,setCargo] = useState('');
     const [funcao,setFuncao] = useState('');
@@ -21,7 +26,7 @@ const Form = (props) => {
             cargo,
             funcao,
             time
-        })
+        });
         console.log("Envio do form", nome, cargo, funcao, time)
     }
 
@@ -34,18 +39,18 @@ const Form = (props) => {
                 label="Nome" 
                 placeholder="Digite seu nome" 
                 require={true}
-                onOnChange={valor => setNome(valor)}
+                onOnChange={valor => setNome(valor.replace(/\d/g, ''))}
                 />
                 <InputText  
                 valor={cargo}
-                onOnChange={valor => setCargo(valor)}
+                onOnChange={valor => setCargo(valor.replace(/\d/g, ''))}
                 label="Cargo" 
                 placeholder="Digite seu cargo" 
                 require={true}
                 />
                 <InputText 
                 valor={funcao}
-                onOnChange={valor => setFuncao(valor)} 
+                onOnChange={valor => setFuncao(valor.replace(/\d/g, ''))} 
                 label="Função" 
                 placeholder="Digite sua função" 
                 require={true}
@@ -59,6 +64,11 @@ const Form = (props) => {
                 <Button>Enviar</Button>
             </form>
         </section>
-    )
+    )   
 }
+//validation for prop types
+Form.propTypes = {
+    onSaveCoworker: PropTypes.func.isRequired
+};
+
 export default Form;
