@@ -48,9 +48,14 @@ function App() {
   return (
     <div className="App">
         <Banner />
-        <Form onSaveCoworker={coworker => newCoWorker(coworker)}/>
-        {times.map(time => <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}/>)}
-    
+        <Form times={times.map(time => time.nome)} onSaveCoworker={coworker => newCoWorker(coworker)}/>
+          {times.map(time => <Time 
+            key={time.nome} 
+            nome={time.nome} 
+            corPrimaria={time.corPrimaria} 
+            corSecundaria={time.corSecundaria}
+            coworkers={coworkers.filter(coworker => coworker.time === time.nome)}
+          />)}
     </div>
   );
 }

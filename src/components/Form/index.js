@@ -7,17 +7,12 @@ import InputText from '../InputText';
 import './Form.css'
 
 const Form = (props) => {
-    const times = [
-        'Programação',
-        'Design',
-        'Marketing',
-        'Negócios'
-    ]
     
     const [nome,setNome] = useState('');
     const [cargo,setCargo] = useState('');
     const [funcao,setFuncao] = useState('');
     const [time, setTime] = useState('');
+    const [imagem,setImagem] = useState('');
 
     const onSave = (event) => {
         event.preventDefault();
@@ -25,7 +20,8 @@ const Form = (props) => {
             nome,
             cargo,
             funcao,
-            time
+            time,
+            imagem
         });
         console.log("Envio do form", nome, cargo, funcao, time)
     }
@@ -55,11 +51,18 @@ const Form = (props) => {
                 placeholder="Digite sua função" 
                 require={true}
                 />
+                 <InputText 
+                valor={imagem}
+                onOnChange={valor => setImagem(valor.replace(/\d/g, ''))} 
+                label="Imagem" 
+                placeholder="URL da imagem" 
+                require={true}
+                />
                 <DropDown 
                 label="Time" 
                 valor={time}
                 onOnChange={valor => setTime(valor)}
-                itens={times} 
+                itens={props.times} 
                 require={true}/>
                 <Button>Enviar</Button>
             </form>
@@ -68,7 +71,8 @@ const Form = (props) => {
 }
 //validation for prop types
 Form.propTypes = {
-    onSaveCoworker: PropTypes.func.isRequired
+    onSaveCoworker: PropTypes.func.isRequired,
+    times:PropTypes.func.isRequired
 };
 
 export default Form;
